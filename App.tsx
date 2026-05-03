@@ -41,12 +41,12 @@ function App(): JSX.Element {
         return [...prev, dataUri];
       });
     }),
-  []);
+    []);
 
   useEffect(() => {
     (async () => {
       const status = await Camera.requestCameraPermission();
-      setHasPermission(status === 'granted' || status === 'authorized');
+      setHasPermission(status === 'granted');
     })();
   }, []);
 
